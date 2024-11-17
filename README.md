@@ -9,4 +9,4 @@ https://github.com/edwinbulter/klik_backend
 ![AWS Components](/src/main/resources/eb/javafx/klik/aws-components-javafx-klik.png)
 
 ## Sequence Diagram:
-![Sequence Diagram](/src/main/resources/eb/javafx/klik/sequence-diagram-javafx-klik.png))
+![Sequence Diagram](/src/main/resources/eb/javafx/klik/sequence-diagram-javafx-klik.png)
