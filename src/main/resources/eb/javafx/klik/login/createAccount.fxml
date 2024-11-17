@@ -1,0 +1,54 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+<AnchorPane
+        xmlns:fx="http://javafx.com/fxml"
+        fx:controller="eb.javafx.klik.login.CreateAccountController">
+    <Pane fx:id="createPane" visible="true">
+        <Label layoutX="50.0" layoutY="40.0" text="Username:" />
+        <TextField fx:id="usernameField" layoutX="125.0" layoutY="35.0" prefHeight="25.0" prefWidth="225.0" />
+
+        <Label layoutX="50.0" layoutY="80.0" text="Password:" />
+        <PasswordField fx:id="passwordField" layoutX="125.0" layoutY="75.0" prefHeight="25.0" prefWidth="175.0" />
+        <TextField fx:id="unmaskedPasswordField" layoutX="125.0" layoutY="75.0" prefWidth="175.0" visible="false" />
+
+        <Button fx:id="toggleButton" layoutX="300.0" layoutY="75.0" onAction="#togglePasswordVisibility" prefHeight="25.0" prefWidth="50.0" text="Show" />
+
+        <Label layoutX="50.0" layoutY="120.0" text="Email:" />
+        <TextField fx:id="emailField" layoutX="125.0" layoutY="115.0" prefHeight="25.0" prefWidth="225.0"
+                   promptText="Enter your email"/>
+
+        <Button fx:id="createAccountButton" layoutX="125.0" layoutY="155.0"
+                onAction="#handleCreateAccount" prefHeight="25.0" prefWidth="225.0"
+                text="Create Account" />
+    </Pane>
+    <Pane fx:id="confirmPane" visible="false">
+        <Text layoutX="50.0" layoutY="30"
+              text="We Emailed You"
+              style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+        <Text layoutX="50.0" layoutY="55"
+              text="Your code is on the way. To log in, enter the code we emailed to you."
+              style="-fx-font-size: 13px;"/>
+        <Text layoutX="50.0" layoutY="75"
+              text="It may take a minute to arrive"
+              style="-fx-font-size: 13px;"/>
+        <Label layoutX="50.0" layoutY="110.0"
+               text="Confirmation Code:" />
+        <TextField fx:id="confirmationCodeField"
+                   layoutX="160.0" layoutY="105.0"
+                   prefHeight="25.0" prefWidth="200.0" />
+        <Button fx:id="confirmButton"
+                layoutX="160.0" layoutY="145.0"
+                onAction="#handleConfirm" prefHeight="25.0" prefWidth="200.0"
+                text="Confirm" />
+        <Button fx:id="cancelButton"
+                layoutX="160.0" layoutY="185.0"
+                onAction="#handleCancel" prefHeight="25.0" prefWidth="200.0"
+                text="Cancel" />
+    </Pane>
+    <Pane fx:id="signoutPane" visible="false">
+        <Label text="Signout first if you want to create a new account"
+               layoutX="150.0" layoutY="100.0"/>
+    </Pane>
+</AnchorPane>

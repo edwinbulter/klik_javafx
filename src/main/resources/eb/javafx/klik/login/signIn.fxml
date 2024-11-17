@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane
+        prefHeight="186.0" prefWidth="388.0"
+        xmlns="http://javafx.com/javafx/17.0.6"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="eb.javafx.klik.login.SignInController">
+    <Pane fx:id="signInPane">
+        <Label layoutX="50.0" layoutY="40.0" text="Username:" />
+        <TextField fx:id="usernameField" layoutX="125.0" layoutY="35.0" prefHeight="25.0" prefWidth="225.0" />
+
+        <Label layoutX="50.0" layoutY="80.0" text="Password:" />
+        <PasswordField fx:id="passwordField" layoutX="125.0" layoutY="75.0" prefHeight="25.0" prefWidth="175.0" />
+        <TextField fx:id="unmaskedPasswordField" layoutX="125.0" layoutY="75.0" prefHeight="25.0"  prefWidth="175.0" visible="false" />
+        <Button fx:id="toggleButton" layoutX="300.0" layoutY="75.0" onAction="#togglePasswordVisibility" prefHeight="25.0" prefWidth="50.0" text="Show" />
+
+        <Button fx:id="signInButton" layoutX="125.0" layoutY="115.0"
+                onAction="#handleSignIn" prefHeight="25.0" prefWidth="225.0"
+                text="Sign In" />
+    </Pane>
+    <Pane fx:id="signOutPane" visible="false">
+        <Button fx:id="signOutButton" layoutX="125.0" layoutY="60.0" onAction="#handleSignOut" prefHeight="25.0" prefWidth="225.0" text="Sign Out" />
+    </Pane>
+</AnchorPane>

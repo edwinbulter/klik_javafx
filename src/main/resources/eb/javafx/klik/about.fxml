@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0"
+            AnchorPane.topAnchor="0.0"
+            AnchorPane.bottomAnchor="0.0"
+            AnchorPane.leftAnchor="0.0"
+            AnchorPane.rightAnchor="0.0">
+    <center>
+        <TextFlow prefHeight="207.0" prefWidth="589.0" style="-fx-padding: 10;">
+            <Text text="About KLiK" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+            <Text text="&#10;" style="-fx-padding-bottom: 20px;" />
+            <Text text="&#10;" style="-fx-padding-bottom: 20px;" />
+            <Text text="This simple app is build with a JavaFX front-end and AWS Serverless back-end." style="-fx-font-size: 15px;" />
+        </TextFlow>
+    </center>
+</BorderPane>

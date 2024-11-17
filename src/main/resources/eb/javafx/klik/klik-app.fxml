@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<AnchorPane
+        prefHeight="186.0" prefWidth="388.0"
+        xmlns="http://javafx.com/javafx/17.0.6"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="eb.javafx.klik.KlikAppController">
+    <Pane fx:id="signedInPane" visible="false">
+        <Text layoutX="50.0" layoutY="30"
+              fx:id="greetingText"
+              text="Hello"
+              style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+
+        <Button layoutX="50.0" layoutY="80.0"
+                prefHeight="25.0" prefWidth="250.0"
+                fx:id="klikButton"
+                onAction="#handleKlik"
+                text="KLiK"/>
+
+        <Label layoutX="50.0" layoutY="130.0" text="Your KLiK count:"/>
+        <Label layoutX="200.0" layoutY="130.0" fx:id="klikCount"/>
+
+        <Label layoutX="50.0" layoutY="170.0" text="Total KLiK count:"/>
+        <Label layoutX="200.0" layoutY="170.0" fx:id="totalCount"/>
+    </Pane>
+    <Pane fx:id="signedOutPane">
+        <Label layoutX="50.0" layoutY="40.0" text="Your have to login to use the KLiK App"/>
+    </Pane>
+</AnchorPane>

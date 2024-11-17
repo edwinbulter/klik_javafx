@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/17.0.6"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="eb.javafx.klik.MainController">
+    <BorderPane prefHeight="400.0" prefWidth="600.0"
+                AnchorPane.topAnchor="0.0"
+                AnchorPane.bottomAnchor="0.0"
+                AnchorPane.leftAnchor="0.0"
+                AnchorPane.rightAnchor="0.0">
+        <top>
+            <HBox prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: lightgray;">
+                <Label prefHeight="100.0" prefWidth="120.0" text="  KLiK" textFill="#2aa845">
+                    <font>
+                        <Font name="System Bold" size="36.0"/>
+                    </font>
+                </Label>
+                <ButtonBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="343.0">
+                    <buttons>
+                        <Button fx:id="aboutButton" onAction="#showAbout" mnemonicParsing="false" text="About"/>
+                        <Button fx:id="designButton" onAction="#showDesign" mnemonicParsing="false" text="Design"/>
+                        <Button fx:id="klikButton" onAction="#showKlikApp" mnemonicParsing="false" text="KLiK"/>
+                        <Button fx:id="usageButton" onAction="#showUsage" mnemonicParsing="false" text="Usage"/>
+                        <Button fx:id="loginButton" onAction="#showLogin" mnemonicParsing="false" text="Login"/>
+                    </buttons>
+                </ButtonBar>
+            </HBox>
+        </top>
+        <center>
+                <AnchorPane fx:id="contentPane"/>
+        </center>
+    </BorderPane>
+</AnchorPane>

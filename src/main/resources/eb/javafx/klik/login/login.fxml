@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+         prefWidth="600.0"
+         AnchorPane.topAnchor="0.0"
+         AnchorPane.bottomAnchor="0.0"
+         AnchorPane.leftAnchor="0.0"
+         AnchorPane.rightAnchor="0.0"
+         tabClosingPolicy="UNAVAILABLE"
+         xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.6"
+         fx:controller="eb.javafx.klik.login.LoginController">
+    <Tab fx:id="signInTab" text="Sign In">
+        <fx:include source="signIn.fxml"/>
+    </Tab>
+    <Tab text="Reset Password">
+        <fx:include source="resetPassword.fxml"/>
+    </Tab>
+    <Tab text="Create Account">
+        <fx:include source="createAccount.fxml"/>
+    </Tab>
+</TabPane>

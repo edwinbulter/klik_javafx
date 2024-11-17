@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<BorderPane prefHeight="400.0" prefWidth="600.0"
+            AnchorPane.bottomAnchor="0.0"
+            AnchorPane.leftAnchor="0.0"
+            AnchorPane.rightAnchor="0.0"
+            AnchorPane.topAnchor="0.0"
+            xmlns="http://javafx.com/javafx/17.0.6"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="eb.javafx.klik.UsageController">
+    <top>
+        <HBox>
+            <padding>
+                <Insets bottom="0.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <Button fx:id="loadDataButton" text="Refresh" prefWidth="80"/>
+            <Label fx:id="statusLabel" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="134.0" text="Status: Not started" />
+        </HBox>
+    </top>
+    <center>
+        <VBox>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <TableView fx:id="usageTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="userColumn" text="User" />
+                    <TableColumn fx:id="clickColumn" text="Click" />
+                    <TableColumn fx:id="lastClickedColumn" text="Last Clicked" />
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

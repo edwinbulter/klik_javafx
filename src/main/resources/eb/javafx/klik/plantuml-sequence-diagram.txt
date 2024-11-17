@@ -1,0 +1,72 @@
+@startuml
+actor Client
+participant JavaFX
+participant Cognito
+participant UserGroupAssigner
+participant APIGateway
+participant AVPAuthorizer
+participant VerifiedPermissions
+participant GetCounterLambda as GetCounterService
+participant IncrementCounterLambda as IncrementCounterService
+participant GetAllCountersLambda as GetAllCountersService
+database DynamoDB
+
+
+Client -> JavaFX: Create Account
+JavaFX -> Cognito : Create Account
+Cognito -> Client : Verification email
+Client -> Cognito : Confirm (verificationcode)
+Cognito -> UserGroupAssigner : add user to group
+Cognito -> JavaFX: Confirm
+JavaFX -> Client : Your account is ready to use.
+Client -> JavaFX: login (username, password)
+JavaFX -> Cognito: login (username, password, poolId, ClientId)
+Cognito -> JavaFX : AccessToken + RefreshToken
+JavaFX -> Client: Succesfully Signed-In
+
+Client -> JavaFX : selects Usage in main menu
+JavaFX -> APIGateway : GET <APIGateway baseurl>/getAllCounters
+APIGateway -> GetAllCountersService :
+GetAllCountersService -> DynamoDB : read all records
+GetAllCountersService -> JavaFX : List of (user_id, user_count, total_count)
+JavaFX -> Client : Display table with click_count per user
+
+Client -> JavaFX : selects KLiK in main menu
+JavaFX -> APIGateway : GET <base_url>/getCounter (AccessToken + user_id)
+APIGateway -> AVPAuthorizer: accessToken
+AVPAuthorizer -> VerifiedPermissions : check if user in group
+
+alt user in group
+VerifiedPermissions -> APIGateway : isAuthorized
+APIGateway -> GetCounterService : user_id
+GetCounterService -> DynamoDB: read all records
+GetCounterService -> JavaFX: user_id + user_count + total_count
+JavaFX -> Client: Display UserCount and TotalCount
+
+else user not in group
+VerifiedPermissions -> APIGateway : not Authorized
+APIGateway -> JavaFX : error
+JavaFX -> Client: Show Error
+end
+
+Client -> JavaFX: Clicks on KLiK button in KLiK screen
+JavaFX -> APIGateway : POST <APIGateway base_url> (AccessToken + user_id)
+APIGateway -> AVPAuthorizer: accessToken
+AVPAuthorizer -> VerifiedPermissions : check if user in group
+
+alt user in group
+VerifiedPermissions -> APIGateway : isAuthorized
+APIGateway -> IncrementCounterService : AccessToken + user_id
+IncrementCounterService -> DynamoDB : read user record
+IncrementCounterService -> DynamoDB : update user record
+IncrementCounterService -> DynamoDB : read all records
+IncrementCounterService -> JavaFX : user_id + user_count + total_count
+JavaFX -> Client : Display new UserCount and TotalCount
+
+else user not in group
+VerifiedPermissions -> APIGateway : not Authorized
+APIGateway -> JavaFX : error
+JavaFX -> Client : show error
+end
+
+@enduml

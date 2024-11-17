@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<BorderPane prefHeight="400.0" prefWidth="600.0"
+            AnchorPane.topAnchor="0.0"
+            AnchorPane.bottomAnchor="0.0"
+            AnchorPane.leftAnchor="0.0"
+            AnchorPane.rightAnchor="0.0">
+    <center>
+        <ScrollPane prefHeight="400.0" prefWidth="600.0">
+            <VBox>
+                <Text text="AWS Serverless Architecture" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                <ImageView id="imageView" fitWidth="700" preserveRatio="true">
+                    <Image url="@aws-components-javafx-klik.png"/>
+                </ImageView>
+                <Text text="Sequence Diagram" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                <ImageView id="imageView" fitWidth="1400" preserveRatio="true">
+                    <Image url="@sequence-diagram-javafx-klik.png"/>
+                </ImageView>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>
